@@ -1,10 +1,39 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <input type="text" name="pin" placeholder="Your full name" formControlName="pincode">
-    <br />
+<div class="row mx-auto">
+    <div class="card w-100">
+        <div class="card-header">
+            <span class="fntBg">
+                Find Slots By Pincode
+            </span>
+        </div>
+        <div class="card-body">
+            <div class="row mx-auto d-flex justify-content-center">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Pin Code</label>
+                        <input type="text" class="form-control" formControlName="pincode" id="exampleInputpincode"
+                            aria-describedby="pinHelp">
+                        <small id="pinHelp" class="form-text text-muted">Enter Your Pincode to check the Slot
+                            Availability</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Date</label>
+                        <input type="text" formControlName="date" class="form-control" id="exampleInputPassword1"
+                            aria-describedby="dateHelp">
+                        <small id="dateHelp" class="form-text text-muted">Enter Date in <b>dd-mm-yyyy</b></small>
+                    </div>
+                    <div class="row mx-auto d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
 
-    <input type="text" name="date" placeholder="dd-mm-yyyy" formControlName="date">
-    <br />
+                </form>
+            </div>
 
-    <br />
-    <input type="submit" value="Send">
-</form>
+        </div>
+    </div>
+</div>
+<div class="row mx-auto" *ngIf="slotData">
+    <find-by-pin-searched-data class="w-100" [pinData]="slotData"></find-by-pin-searched-data>
+</div>
+<!-- <div class="row mx-auto" *ngIf="!slotData">
+    <no-data-avaialable class="w-100"></no-data-avaialable>
+</div> -->

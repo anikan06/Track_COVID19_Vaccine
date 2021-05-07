@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
+import { NoDataAvaialableComponent } from './no-data-avaialable/no-data-avaialable.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    NoDataAvaialableComponent
   ],
   imports: [
     BrowserModule,
