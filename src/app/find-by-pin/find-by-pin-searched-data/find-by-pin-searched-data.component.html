@@ -7,15 +7,59 @@
                 </div>
                 <small class=" text-uppercase">
                     Address: {{d.address}}
-                </small> <br/>
+                </small> <br />
                 <small class=" text-uppercase">
                     {{d.district_name}}, {{d.state_name}}, {{d.pincode}}
                 </small>
             </div>
             <div class="card-body">
-                <div class="row mx-auto px-4" [ngClass]="{'bg-success' : d.fee_type === 'Free'}">
-                        {{d.fee_type}}
+                <div class="row mx-auto bg-warning text-uppercase text-white">
+                    {{d.vaccine}}
                 </div>
+                <div class="row mx-auto" [ngClass]="{'text-success' : d.fee_type === 'Free'}">
+                    {{d.fee_type}}
+                </div>
+                <div class="row mx-auto">
+                    <span class="title">
+                        Timings:
+                    </span>
+                    <span class="content">
+                        {{d.from}} to {{d.to}}
+                    </span>
+                </div>
+                <div class="row mx-auto">
+                    <span class="title">
+                        Avaialable Capacity:
+                    </span>
+                    <span class="content">
+                        {{d.available_capacity}}
+                    </span>
+                </div>
+                <div class="row mx-auto" *ngIf="d.fee_type === 'Paid'">
+                    <span class="title">
+                        Fee
+                    </span>
+                    <span class="content">
+                        {{d.fee}}
+                    </span>
+                </div>
+                <div class="row mx-auto" *ngIf="d.fee_type === 'Paid'">
+                        <span class="title">
+                            Minimum Age Limit
+                        </span>
+                        <span class="content">
+                            {{d.min_age_limit}}
+                        </span>
+                    </div>
+                    <div class="row mx-auto" >
+                            <div class="col-12">
+                                Avilable Slots
+                            </div>
+                            <div class="col-6" *ngFor="let slot of d.slots">
+                                {{slot}}
+                            </div>
+                        </div>
+
             </div>
         </div>
     </ng-container>
