@@ -1,0 +1,22 @@
+<div class="row mx-auto">
+    <ng-container *ngFor="let d of pinData.sessions;let i = index">
+        <div class="card w-100">
+            <div class="card-header">
+                <div class="cardHead text-uppercase">
+                    {{d.name}}
+                </div>
+                <small class=" text-uppercase">
+                    Address: {{d.address}}
+                </small> <br/>
+                <small class=" text-uppercase">
+                    {{d.district_name}}, {{d.state_name}}, {{d.pincode}}
+                </small>
+            </div>
+            <div class="card-body">
+                <div class="row mx-auto px-4" [ngClass]="{'bg-success' : d.fee_type === 'Free'}">
+                        {{d.fee_type}}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

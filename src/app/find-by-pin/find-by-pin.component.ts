@@ -14,6 +14,7 @@ export class FindByPinComponent implements OnInit {
   baseUrl = environment.baseUrl;
   getUrl = '/v2/appointment/sessions/public/findByPin';
   contactForm: FormGroup;
+  slotData;
 
   constructor(
     private httpClient: HttpClient,
@@ -24,7 +25,6 @@ export class FindByPinComponent implements OnInit {
   ngOnInit() {
     this.createContactForm();
     console.log(this.allStates);
-
     
 
   }
@@ -43,6 +43,7 @@ export class FindByPinComponent implements OnInit {
       date: this.contactForm.value.date
     }}).subscribe(x => {
       console.log(x);
+      this.slotData = x;
     })
 }
 
