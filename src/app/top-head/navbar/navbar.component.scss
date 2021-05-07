@@ -1,0 +1,39 @@
+.act {
+    font-weight: 600;
+    color      : #1d2124 !important;
+    background-color: #fff;
+    border-bottom: 1px #fff solid !important;
+    border-left: 1px solid rgba(108, 117, 125, 0.23);
+    border-right: 1px solid rgba(108, 117, 125, 0.23);;
+    border-top: 1px solid rgba(108, 117, 125, 0.23);;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.nav-img {
+    width : 40px;
+    height: 40px;
+}
+
+.text-nav {
+    font-size  : 1.2em;
+    color      : #000;
+    font-weight: 600;
+    display    : inline-block;
+}
+
+.bb-1 {
+    border-bottom: 1px solid rgba(108, 117, 125, 0.23);;
+    border-radius: 0;
+}
+
+.navStyle {
+    .col-1 {
+        -webkit-box-flex: 0;
+        flex: 0 0 5.333333%;
+        max-width: 8.333333%;
+    }
+}
+
