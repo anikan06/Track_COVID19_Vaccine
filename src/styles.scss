@@ -1,1 +1,156 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+router-outlet + * {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .totalCount {
+    color: red !important;
+    font-size: 14px;
+    font-weight: 700;
+    display: none;
+}
+
+.cdHd {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.cdBdC {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.cdBdA {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 600;
+}
+.cdBdR {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 600;
+}
+.cdBdD {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.hTxt {
+    font-size: 2em;
+    font-weight: 600;
+    color: #212529;
+}
+.nt-Txt {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #212529;
+}
+
+.luD {
+    // color: #212529;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.cdBdC-f {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.fntSm {
+    color: red;
+    font-size: 12px;
+    
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .nv-lg {
+        display: none;
+    }
+
+    .nv-xs {
+        display: block;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .nv-lg {
+        display: none;
+    }
+
+    .nv-xs {
+        display: block;
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .nv-lg {
+        display: block;
+    }
+
+    .nv-xs {
+        display: none;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .nv-lg {
+        display: block;
+    }
+
+    .nv-xs {
+        display: none;
+    }
+ }
+
+
+.smBgT {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    display: block;
+}
+
+.smTxt {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 600;
+    display: block;
+}
+.smBgTc {
+    font-size: 0.9em;
+    color: #343a40;
+    font-weight: 600;
+    display: block;
+}
+
+
+.smTxtm {
+    font-size: 0.79em;
+    color: #fff;
+    font-weight: 600;
+    display: block;
+}
+
+.txt-dng {
+    color: #b30617!important;
+}
+
+.txt-al-dng {
+    color: #dc3545 !important;
+}
+
+.txt-war {
+    color: #ff7272 !important;
+}
