@@ -15,6 +15,7 @@ import { FindByPinSearchedDataComponent } from './find-by-pin-searched-data/find
     FormsModule,
     ReactiveFormsModule
   ],
-  bootstrap: [FindByPinComponent]
+  bootstrap: [FindByPinComponent],
+  exports: [FindByPinSearchedDataComponent]
 })
 export class FindByPinModule { }

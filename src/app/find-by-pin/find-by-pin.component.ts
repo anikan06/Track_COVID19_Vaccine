@@ -10,7 +10,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./find-by-pin.component.scss']
 })
 export class FindByPinComponent implements OnInit {
-  allStates: any = JSON.parse(sessionStorage.getItem('statesArr'));;
   baseUrl = environment.baseUrl;
   getUrl = '/v2/appointment/sessions/public/findByPin';
   contactForm: FormGroup;
@@ -24,9 +23,6 @@ export class FindByPinComponent implements OnInit {
 
   ngOnInit() {
     this.createContactForm();
-    console.log(this.allStates);
-    
-
   }
 
   createContactForm(){

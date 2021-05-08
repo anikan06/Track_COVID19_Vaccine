@@ -26,7 +26,6 @@ export class AppComponent implements OnInit{
     this.httpClient.get(this.baseUrl + this.getStateUrl).subscribe(states => {
       this.spinner.hide();
       this.allStates = states;
-      console.log(this.allStates);
       sessionStorage.setItem('statesArr',JSON.stringify(this.allStates));
     })
   }

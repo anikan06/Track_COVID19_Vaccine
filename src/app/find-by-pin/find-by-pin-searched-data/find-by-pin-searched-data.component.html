@@ -1,6 +1,6 @@
 <div class="row mx-auto">
     <ng-container *ngFor="let d of pinData.sessions;let i = index">
-        <div class="card w-100">
+        <div class="card w-100 my-2">
             <div class="card-header">
                 <div class="cardHead text-uppercase">
                     {{d.name}}
@@ -44,21 +44,21 @@
                     </span>
                 </div>
                 <div class="row mx-auto" *ngIf="d.fee_type === 'Paid'">
-                        <span class="title">
-                            Minimum Age Limit
-                        </span>
-                        <span class="content">
-                            {{d.min_age_limit}}
-                        </span>
+                    <span class="title">
+                        Minimum Age Limit
+                    </span>
+                    <span class="content">
+                        {{d.min_age_limit}}
+                    </span>
+                </div>
+                <div class="row mx-auto">
+                    <div class="col-12">
+                        Avilable Slots
                     </div>
-                    <div class="row mx-auto" >
-                            <div class="col-12">
-                                Avilable Slots
-                            </div>
-                            <div class="col-6" *ngFor="let slot of d.slots">
-                                {{slot}}
-                            </div>
-                        </div>
+                    <div class="col-6" *ngFor="let slot of d.slots">
+                        {{slot}}
+                    </div>
+                </div>
 
             </div>
         </div>
