@@ -5,6 +5,7 @@ import { FindByDistrictRoutingModule } from './find-by-district-routing.module';
 import { FindByDistrictSearchedDataComponent } from './find-by-district-searched-data/find-by-district-searched-data.component';
 import { FindByPinModule } from '../find-by-pin/find-by-pin.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FindByDistrictRoutingModule,
     FindByPinModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ]
 })
 export class FindByDistrictModule { }
