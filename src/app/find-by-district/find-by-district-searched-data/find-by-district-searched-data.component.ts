@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { CustomAdapter } from 'src/app/services/custom-adapter.service';
+import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-find-by-district-searched-data',
   templateUrl: './find-by-district-searched-data.component.html',
-  styleUrls: ['./find-by-district-searched-data.component.scss']
+  styleUrls: ['./find-by-district-searched-data.component.scss'],
+  providers: [
+    {provide: NgbDateAdapter, useClass: CustomAdapter}
+  ]
 })
 export class FindByDistrictSearchedDataComponent implements OnInit {
 
@@ -45,7 +50,6 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
     this.httpClient.get(this.baseUrl + this.getDistrictURL + stId).subscribe(cit => {
       this.cityList = cit;
       this.hideCity = true;
-      console.log(this.cityList);
     });
   }
 
@@ -65,7 +69,6 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.districtForm.value);
     let getCityId = this.districtForm.value.city.substr(this.districtForm.value.city.indexOf(' ') + 1)
     this.httpClient.get(this.baseUrl + this.getDistrictDataURL, {
       params: {
