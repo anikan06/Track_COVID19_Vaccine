@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { CustomAdapter } from 'src/app/services/custom-adapter.service';
 import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-find-by-district-searched-data',
@@ -26,11 +27,13 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
   
 
   constructor(private fb: FormBuilder,
-    private httpClient: HttpClient,) { }
+    private httpClient: HttpClient,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
-    console.log(this.stateName);
+    this.spinner.show();
     this.createDistrictForm();
+    this.spinner.hide();
   }
 
   createDistrictForm(){
@@ -46,10 +49,13 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
     this.stateNames.setValue(e.target.value, {
       onlySelf: true
     });
+    this.slotData = [];
     let stId = this.stateNames.value.substr(this.stateNames.value.indexOf(' ') + 1);
+    this.spinner.show();
     this.httpClient.get(this.baseUrl + this.getDistrictURL + stId).subscribe(cit => {
       this.cityList = cit;
       this.hideCity = true;
+      this.spinner.hide();
     });
   }
 
@@ -59,6 +65,7 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
   }
 
   changeCity(e) {
+    
     this.cityNames.setValue(e.target.value, {
       onlySelf: true
     })
@@ -69,6 +76,7 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
   }
 
   onSubmit() {
+    this.spinner.show();
     let getCityId = this.districtForm.value.city.substr(this.districtForm.value.city.indexOf(' ') + 1)
     this.httpClient.get(this.baseUrl + this.getDistrictDataURL, {
       params: {
@@ -77,6 +85,7 @@ export class FindByDistrictSearchedDataComponent implements OnInit {
       }
     }).subscribe(d => {
       this.slotData = d;
+      this.spinner.hide();
     })
   }
 

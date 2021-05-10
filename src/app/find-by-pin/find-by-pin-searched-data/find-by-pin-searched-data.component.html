@@ -19,6 +19,7 @@
                 <div class="row mx-auto" [ngClass]="{'text-success' : d.fee_type === 'Free'}">
                     {{d.fee_type}}
                 </div>
+                
                 <div class="row mx-auto">
                     <span class="title">
                         Timings:
@@ -51,6 +52,14 @@
                         {{d.min_age_limit}}
                     </span>
                 </div>
+                <div class="row mx-auto">
+                        <span class="title  text-success">
+                            Minimum Age:
+                        </span>
+                        <span class="content text-success">
+                            {{d.min_age_limit}}
+                        </span>
+                    </div>  
                 <div class="row mx-auto">
                     <div class="col-12">
                         Avilable Slots
